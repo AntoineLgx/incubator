@@ -4,18 +4,24 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { AppRoutingModule } from './app-routing-module';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent
+    HomeComponent,
+    SignUpComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
