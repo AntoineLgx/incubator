@@ -1,0 +1,38 @@
+<div class="container">
+  <form (ngSubmit)="addStartUp()" [formGroup]="startUpForm">
+    <div class="form-row">
+      <div class="col">
+        <label for="nom">Nom de la start-up :</label>
+        <input type="text" class="form-control" formControlName="nom" placeholder="Nom Start-up">
+        <small class="form-text text-muted">(20 caractères maximum)</small>
+      </div>
+      <div class="col">
+          <label for="secteur">Secteur d'activité :</label>
+          <input type="text" class="form-control" formControlName="secteur" placeholder="Secteur d'activité">
+          <small class="form-text text-muted">(10 caractères maximum)</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col">
+        <label for="nomRepLeg">Nom du représentant légal :</label>
+        <input type="text" class="form-control" formControlName="repLeg">
+        <small class="form-text text-muted">(15 caractères maximum)</small>
+      </div>
+      <div class="col">
+          <label for="fondateurs">Nombre de co-fondateurs :</label>
+          <input type="number" class="form-control" formControlName="fondateurs">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="mail">Adresse E-mail :</label>
+      <input type="email" class="form-control" formControlName="mail" placeholder="Email">
+      <small class="form-text text-muted">(25 caractères maximum)</small>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" formControlName="desc" rows="3"></textarea>
+      <small class="form-text text-muted">(250 caractères maximum)</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Je m'incube !</button>
+  </form>
+</div>
