@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead class="blue">
+    <tr>
+      <th scope="col">Start-up</th>
+      <th scope="col">Représentant</th>
+      <th scope="col">Nombre de Co-fondateurs</th>
+      <th scope="col">Description</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Consultant</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of startUps">
+      <th scope="row">{{ s.nom }}</th>
+      <td>{{ s.representantLegal }}</td>
+      <td>{{ s.nbrFondateurs }}</td>
+      <td>{{ s.description }}</td>
+      <td>{{ s.mail == null ? "oui" : "non" }}</td>
+      <td>{{ s.representantLegal }}</td>
+    </tr>
+  </tbody>
+</table>
