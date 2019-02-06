@@ -9,6 +9,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { StartUpListComponent } from './start-up-list/start-up-list.component';
 import { AppRoutingModule } from './app-routing-module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NbrFondateurPipe } from './start-up-list/nbr-fondateur.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     StartUpListComponent,
     HomeComponent,
     SignUpComponent,
-    NavbarComponent
+    NavbarComponent,
+    NbrFondateurPipe
   ],
   imports: [
     BrowserModule,

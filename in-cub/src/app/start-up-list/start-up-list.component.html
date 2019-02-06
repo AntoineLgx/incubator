@@ -1,23 +1,31 @@
+
+<div class="card shadow-sm bg-white rounded">
+  <button class="btn blue is-fullwidth" (click)="hide=!hide">{{ hide == true ? "Fermer le formulaire" : "Ajouter une start-up" }}</button>
+  <app-sign-up [hidden]="!hide"></app-sign-up>
+</div>
+<br>
+
 <table class="table table-striped">
   <thead class="blue">
     <tr>
       <th scope="col">Start-up</th>
       <th scope="col">Représentant</th>
-      <th scope="col">Nombre de Co-fondateurs</th>
+      <th class="col-1 text-center" scope="col">Fondateur</th>
       <th scope="col">Description</th>
-      <th scope="col">Adresse</th>
+      <th class="col-1 text-center" scope="col">Adresse</th>
       <th scope="col">Consultant</th>
-      <th scope="col"></th>
+      <th class="col-1 text-center" scope="col"><i class="fas fa-wrench"></i></th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let s of startUps">
       <th scope="row">{{ s.nom }}</th>
       <td>{{ s.representantLegal }}</td>
-      <td>{{ s.nbrFondateurs }}</td>
+      <td class="text-center">{{ s.nbrFondateurs | nbrFondateur }}</td>
       <td>{{ s.description }}</td>
-      <td>{{ s.mail == null ? "oui" : "non" }}</td>
-      <td>{{ s.representantLegal }}</td>
+      <td class="text-center">{{ s.mail != null ? "oui" : "non" }}</td>
+      <td>In progress</td>
+      <td class="text-center"><a (click)="editStartUp(s)"><i class="far fa-edit"></i></a>&nbsp;&nbsp;<a (click)="deleteStartUp(s)"><i class="far fa-trash-alt"></i></a></td>
     </tr>
   </tbody>
 </table>

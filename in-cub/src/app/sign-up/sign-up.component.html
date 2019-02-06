@@ -1,38 +1,74 @@
+<br>
 <div class="container ml-1">
   <form (ngSubmit)="addStartUp()" [formGroup]="startUpForm">
     <div class="form-row">
+
       <div class="col">
         <label for="nom">Nom de la start-up :</label>
         <input type="text" class="form-control" formControlName="nom" placeholder="Nom Start-up">
-        <small class="form-text text-muted">(20 caractères maximum)</small>
+        <small class="form-text bg-warning text-center font-weight-bold" *ngIf="nomControl.dirty && nomControl.hasError('maxlength')">Le nom doit avoir 20 caractères maximum</small>
+        <small class="form-text bg-warning text-center font-weight-bold" *ngIf="nomControl.dirty && nomControl.hasError('required')">Le nom de la start-up est obligatoire</small>
+        <small class="form-text text-muted" *ngIf="!(nomControl.hasError('maxlength') || nomControl.hasError('required'))">(20 caractères maximum)</small>
       </div>
+
       <div class="col">
           <label for="secteur">Secteur d'activité :</label>
           <input type="text" class="form-control" formControlName="secteur" placeholder="Secteur d'activité">
-          <small class="form-text text-muted">(10 caractères maximum)</small>
+          <small class="form-text bg-warning text-center font-weight-bold" *ngIf="secteurControl.dirty && secteurControl.hasError('maxlength')">Le secteur d'activité doit avoir 10 caractères maximum</small>
+          <small class="form-text bg-warning text-center font-weight-bold" *ngIf="secteurControl.dirty && secteurControl.hasError('required')">Le secteur d'activité est obligatoire</small>
+          <small class="form-text text-muted" *ngIf="!(secteurControl.hasError('maxlength') || secteurControl.hasError('required'))">(10 caractères maximum)</small>
       </div>
+
     </div>
+    <br>
     <div class="form-row">
+
       <div class="col">
         <label for="nomRepLeg">Nom du représentant légal :</label>
         <input type="text" class="form-control" formControlName="repLeg">
-        <small class="form-text text-muted">(15 caractères maximum)</small>
+        <small class="form-text bg-warning text-center font-weight-bold" *ngIf="nomRepLegControl.dirty && nomRepLegControl.hasError('maxlength')">Le représentant légal doit avoir 15 caractères maximum</small>
+        <small class="form-text bg-warning text-center font-weight-bold" *ngIf="nomRepLegControl.dirty && nomRepLegControl.hasError('required')">Le nom du représentant légal est obligatoire</small>
+        <small class="form-text text-muted" *ngIf="!(nomRepLegControl.hasError('maxlength') || nomRepLegControl.hasError('required'))">(15 caractères maximum)</small>
       </div>
+
       <div class="col">
           <label for="fondateurs">Nombre de co-fondateurs :</label>
           <input type="number" class="form-control" formControlName="fondateurs">
+          <small class="form-text bg-warning text-center font-weight-bold" *ngIf="nbrFondaControl.dirty && nbrFondaControl.hasError('required')">Un nombre de co-fondateurs est obligatoire</small>
       </div>
+      
     </div>
-    <div class="form-group">
-      <label for="mail">Adresse E-mail :</label>
-      <input type="email" class="form-control" formControlName="mail" placeholder="Email">
-      <small class="form-text text-muted">(25 caractères maximum)</small>
+    <br>
+    <div class="form-row">
+      
+      <div class="col">
+        <label for="mail">Adresse E-mail :</label>
+        <input type="email" class="form-control" formControlName="mail" placeholder="Email">
+        <small class="form-text bg-warning text-center font-weight-bold" *ngIf="emailControl.dirty && emailControl.hasError('maxlength')">L'adresse doit comporter 25 caractères maximum</small>
+        <small class="form-text bg-warning text-center font-weight-bold" *ngIf="emailControl.dirty && emailControl.hasError('pattern')">L'adresse doit correspondre à une adresse mail</small>
+        <small class="form-text text-muted"  *ngIf="!(emailControl.hasError('pattern') || emailControl.hasError('maxlength'))">(25 caractères maximum)</small>
+      </div>
+
+      
+      <div class="col">
+        <label for="consultant">Consultant :</label>
+        <select type="" class="form-control" formControlName="consultant" >
+          <option *ngFor="let c of consultants" [value]="c.nom">{{ c.nom }} {{ c.prenom }}</option>
+        </select>
+        <small class="form-text bg-warning text-center font-weight-bold" *ngIf="consultantControl.dirty && consultantControl.hasError('required')">Vous devez choisir un consultant</small>
+      </div>
+
     </div>
+
     <div class="form-group">
       <label for="description">Description</label>
       <textarea class="form-control" formControlName="desc" rows="3"></textarea>
-      <small class="form-text text-muted">(250 caractères maximum)</small>
+      <small class="form-text bg-warning text-center font-weight-bold" *ngIf="descriptionControl.dirty && descriptionControl.hasError('maxlength')">La description doit avoir 250 caractères maximum</small>
+      <small class="form-text bg-warning text-center font-weight-bold" *ngIf="descriptionControl.dirty && descriptionControl.hasError('required')">La description est obligatoire</small>
+      <small class="form-text text-muted" *ngIf="!(descriptionControl.hasError('maxlength') || descriptionControl.hasError('required'))">(250 caractères maximum)</small>
     </div>
-    <button type="submit" class="btn blue is-fullwidth">Je m'incube !</button>
+
+    <button type="submit" class="btn blue is-fullwidth" [disabled]="startUpForm.invalid">Je m'incube !</button>
   </form>
 </div>
+<br>

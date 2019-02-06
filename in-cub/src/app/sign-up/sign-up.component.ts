@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { StartUp } from '../startUp/StartUp';
 import { StartUpService } from '../startUp/start-up.service';
+import { ConsultantService } from '../consultant/consultant.service';
+import { Consultant } from '../consultant/Consultant';
 
 @Component({
 	selector: 'app-sign-up',
@@ -10,6 +12,7 @@ import { StartUpService } from '../startUp/start-up.service';
 })
 export class SignUpComponent implements OnInit {
 
+	consultants: Array<Consultant> = [];
 	startUpForm: FormGroup;
 	nomControl: FormControl;
 	secteurControl: FormControl;
@@ -17,14 +20,16 @@ export class SignUpComponent implements OnInit {
 	nbrFondaControl: FormControl;
 	descriptionControl: FormControl;
 	emailControl: FormControl;
+	consultantControl: FormControl;
 
-	constructor(private startUpService: StartUpService, private fb: FormBuilder) { 
+	constructor(private startUpService: StartUpService, private consultantService: ConsultantService, private fb: FormBuilder) { 
 		this.nomControl = this.fb.control('', [Validators.required, Validators.maxLength(20)]);
 		this.secteurControl = this.fb.control('', [Validators.required, Validators.maxLength(10)]);
 		this.nomRepLegControl = this.fb.control('', [Validators.required, Validators.maxLength(15)]);
-		this.nbrFondaControl = this.fb.control('', Validators.required);
+		this.nbrFondaControl = this.fb.control('', [Validators.pattern('^[0-9]*$'), Validators.required]);
 		this.descriptionControl = this.fb.control('', [Validators.required, Validators.maxLength(250)]);
 		this.emailControl = this.fb.control('', [Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'), Validators.maxLength(25)]);
+		this.consultantControl = this.fb.control('', Validators.required);
 
 		this.startUpForm = this.fb.group({
 			nom: this.nomControl,
@@ -32,11 +37,13 @@ export class SignUpComponent implements OnInit {
 			repLeg: this.nomRepLegControl,
 			fondateurs: this.nbrFondaControl,
 			desc: this.descriptionControl,
-			mail: this.emailControl
+			mail: this.emailControl,
+			consultant: this.consultantControl
 		  });
 	}
 
 	ngOnInit() {
+		this.consultants = this.consultantService.getAllConsultants();
 	}
 
 	addStartUp(){
@@ -47,7 +54,8 @@ export class SignUpComponent implements OnInit {
 			representantLegal: this.startUpForm.value.repLeg,
 			nbrFondateurs: parseInt(this.startUpForm.value.fondateurs),
 			description: this.startUpForm.value.desc,
-			mail: this.startUpForm.value.mail
+			mail: this.startUpForm.value.mail,
+			consultant: this.startUpForm.value.consultant.id
 		  };
 		  this.startUpService.addStartUp(startUp);
 		  this.startUpForm.reset();
