@@ -7,7 +7,6 @@ export class StartUp {
       public nbrFondateurs: number,
       public description: string,
       public mail: string){
-  
     }
   }
   

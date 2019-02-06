@@ -7,10 +7,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StartUpService {
 
+  startUps: Array<StartUp> = [];
+
   constructor(private http: HttpClient) { }
 
   getAllStartUps(){
-    return this.http.get<StartUp[]>(`/api/startups`)
+    this.http.get<StartUp[]>(`/api/startups`).subscribe(
+      startUps => startUps.map(startUp => this.startUps.push(startUp))
+    );
+    return this.startUps;
   }
 
   getStartUp(id: number){
@@ -23,5 +28,10 @@ export class StartUpService {
 
   updateStartUp(startUp: StartUp){
     this.http.put<StartUp>('/api/eleves', startUp)
+  }
+
+  genId(): number{
+    this.getAllStartUps();
+    return this.startUps.length > 0 ? Math.max(...this.startUps.map(s => s.id)) + 1 : 1;
   }
 }
