@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+.dark-green{
+    background-color: #bbd8c9;
+}
+
+.navbar-current{
+    background-color: #79a08b;
+}
+.blue{
+    background-color: #798ea0;
+    color: #ffffff;
+    font-weight: bold;
+}
+.top-buffer { 
+    margin-top:20px; 
+}
+.is-fullwidth{
+    width : 100%;
+}
