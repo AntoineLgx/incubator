@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing-module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NbrFondateurPipe } from './start-up-list/nbr-fondateur.pipe';
 import { ConsultantListComponent } from './consultant-list/consultant-list.component';
+import { ConsultantFormComponent } from './consultant-form/consultant-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ConsultantListComponent } from './consultant-list/consultant-list.compo
     HomeComponent,
     NavbarComponent,
     NbrFondateurPipe,
-    ConsultantListComponent
+    ConsultantListComponent,
+    ConsultantFormComponent
   ],
   imports: [
     BrowserModule,

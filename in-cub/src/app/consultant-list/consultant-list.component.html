@@ -1,3 +1,10 @@
+
+<div class="card shadow-sm bg-white rounded">
+  <button class="btn blue is-fullwidth" (click)="hide=!hide">{{ hide == true ? "Fermer le formulaire" : "Ajouter un consultant" }}</button>
+  <app-consultant-form [hidden]="!hide"></app-consultant-form>
+</div>
+<br>  
+
 <table class="table table-striped">
   <thead class="blue">
     <tr>
@@ -13,9 +20,9 @@
       <th>{{ c.prenom }}</th>
       <td>{{ c.description }}</td>
       <td class="text-center">
-        <a title="Modifier" (click)="editConsultant(c)"><i class="far fa-edit"></i></a>
+        <a title="Modifier" style="cursor: pointer;" (click)="editConsultant(c)"><i class="far fa-edit"></i></a>
         &nbsp;&nbsp;
-        <a title="Supprimer" (click)="deleteConsultant(c.id)"><i class="far fa-trash-alt"></i></a>
+        <a title="Supprimer" style="cursor: pointer;" (click)="deleteConsultant(c.id)"><i class="far fa-trash-alt"></i></a>
       </td>
     </tr>
   </tbody>

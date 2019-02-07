@@ -50,7 +50,7 @@ export class StartUpFormComponent implements OnInit {
 		const startUp : StartUp = {
 			id: this.startUpService.genId(),
 			nom: this.startUpForm.value.nom,
-			secteur: this.startUpForm.value.prenom,
+			secteur: this.startUpForm.value.secteur,
 			representantLegal: this.startUpForm.value.repLeg,
 			nbrFondateurs: parseInt(this.startUpForm.value.fondateurs),
 			description: this.startUpForm.value.desc,

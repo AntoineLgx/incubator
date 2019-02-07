@@ -1,0 +1,35 @@
+<br>
+<div class="container ml-1">
+  <form (ngSubmit)="addConsultant()" [formGroup]="consultantForm">
+    <div class="form-row">
+
+      <div class="col">
+        <label for="nom">Nom :</label>
+        <input type="text" class="form-control" formControlName="nom" placeholder="Nom">
+        <small class="form-text bg-warning text-center font-weight-bold" *ngIf="nomControl.dirty && nomControl.hasError('maxlength')">Le nom doit avoir 20 caractères maximum</small>
+        <small class="form-text bg-warning text-center font-weight-bold" *ngIf="nomControl.dirty && nomControl.hasError('required')">Le nom de la start-up est obligatoire</small>
+        <small class="form-text text-muted" *ngIf="!(nomControl.hasError('maxlength') || nomControl.hasError('required'))">(20 caractères maximum)</small>
+      </div>
+
+      <div class="col">
+          <label for="prenom">Prénom :</label>
+          <input type="text" class="form-control" formControlName="prenom" placeholder="Prenom">
+          <small class="form-text bg-warning text-center font-weight-bold" *ngIf="prenomControl.dirty && prenomControl.hasError('maxlength')">Le secteur d'activité doit avoir 10 caractères maximum</small>
+          <small class="form-text bg-warning text-center font-weight-bold" *ngIf="prenomControl.dirty && secteprenomControlrControl.hasError('required')">Le secteur d'activité est obligatoire</small>
+          <small class="form-text text-muted" *ngIf="!(prenomControl.hasError('maxlength') || prenomControl.hasError('required'))">(20 caractères maximum)</small>
+      </div>
+    </div>
+
+    <br>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea class="form-control" formControlName="desc" rows="2"></textarea>
+      <small class="form-text bg-warning text-center font-weight-bold" *ngIf="descriptionControl.dirty && descriptionControl.hasError('maxlength')">La description doit avoir 250 caractères maximum</small>
+      <small class="form-text bg-warning text-center font-weight-bold" *ngIf="descriptionControl.dirty && descriptionControl.hasError('required')">La description est obligatoire</small>
+      <small class="form-text text-muted" *ngIf="!(descriptionControl.hasError('maxlength') || descriptionControl.hasError('required'))">(250 caractères maximum)</small>
+    </div>
+
+    <button type="submit" class="btn blue is-fullwidth" [disabled]="consultantForm.invalid">Valider l'ajout</button>
+  </form>
+</div>
+<br>

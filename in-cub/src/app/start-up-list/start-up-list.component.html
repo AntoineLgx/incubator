@@ -8,12 +8,12 @@
 <table class="table table-striped">
   <thead class="blue">
     <tr>
-      <th scope="col">Start-up</th>
-      <th scope="col">Représentant</th>
+      <th class="col-1" cope="col">Start-up</th>
+      <th class="col-1" scope="col">Représentant</th>
       <th class="col-1 text-center" scope="col">Fondateur</th>
       <th scope="col">Description</th>
       <th class="col-1 text-center" scope="col">Adresse</th>
-      <th scope="col">Consultant</th>
+      <th class="col-2" scope="col">Consultant</th>
       <th class="col-1 text-center" scope="col"><i class="fas fa-wrench"></i></th>
     </tr>
   </thead>
@@ -26,9 +26,9 @@
       <td class="text-center">{{ s.mail != null ? "oui" : "non" }}</td>
       <td>In progress</td>
       <td class="text-center">
-        <a title="Modifier" (click)="editStartUp(s)"><i class="far fa-edit"></i></a>
+        <a title="Modifier" style="cursor: pointer;" (click)="editStartUp(s)"><i class="far fa-edit"></i></a>
         &nbsp;&nbsp;
-        <a title="SUpprimer" (click)="deleteStartUp(s)"><i class="far fa-trash-alt"></i></a>
+        <a title="SUpprimer" style="cursor: pointer;" (click)="deleteStartUp(s)"><i class="far fa-trash-alt"></i></a>
       </td>
     </tr>
   </tbody>

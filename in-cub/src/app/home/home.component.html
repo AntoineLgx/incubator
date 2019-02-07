@@ -1,15 +1,16 @@
 <div class="container">
-    <div class="row">
+    <br>
+    <div class="row text-center">
         <div class="col">
             <h1>Bienvenue sur In-Cub</h1>
             L'incubateur des Start-ups
         </div>
         <div class="col">
-            <svg class="d-inline-block align-top" width="190" height="190" xmlns="http://www.w3.org/2000/svg">
+            <svg class="d-inline-block align-top" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
                 <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
                 <g>
                     <title>background</title>
-                    <rect fill="#74a58a" id="canvas_background" height="190" width="190" y="-1" x="-1"/>
+                    <rect fill="#74a58a" id="canvas_background" height="80" width="80" y="-1" x="-1"/>
                     <g display="none" id="canvasGrid">
                         <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" id="svg_1"/>
                     </g>
@@ -29,4 +30,84 @@
             </svg>
         </div>
     </div>
+
+    <br>
+    <hr>
+    <h3>Start-ups :</h3>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">NOM Start-up</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Couple de co-fondateurs</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Consultant : NOM Prenom</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">NOM Start-up</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Unique fondateur</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Consultant : NOM Prenom</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">NOM Start-up</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h6 class="card-subtitle mb-2 text-muted">Consultant : NOM Prenom</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <button class="btn blue" [routerLink]="['/startups']" style="width: 100%;">
+        See more
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <br>
+    <br>
+    <hr>
+    <h3>Consultants :</h3>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">NOM Prenom</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">NOM Prenom</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">NOM Prenom</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <button class="btn blue" [routerLink]="['/consultants']" style="width: 100%;">
+        See more
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
 </div>
+<br>
