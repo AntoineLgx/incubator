@@ -12,9 +12,12 @@ export class StartUpService {
   constructor(private http: HttpClient) { }
 
   getAllStartUps(){
-    this.http.get<StartUp[]>(`/api/startups`).subscribe(
-      startUps => startUps.map(startUp => this.startUps.push(startUp))
-    );
+    // this.http.get<StartUp[]>(`/api/startups`).subscribe(
+    //   startUps => startUps.map(startUp => this.startUps.push(startUp))
+    // );
+    this.startUps = [];
+    this.startUps.push(new StartUp(1, "Test", "Test", "Test", 1, "Test", "Mail", null));
+    this.startUps.push(new StartUp(1, "Test", "Test", "Test", 2, "Test", null, null));
     return this.startUps;
   }
 

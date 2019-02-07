@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <thead class="blue">
+    <tr>
+      <th class="col-2" scope="col">Nom</th>
+      <th class="col-2" scope="col">Prénom</th>
+      <th scope="col">Description</th>
+      <th class="col-1 text-center" scope="col"><i class="fas fa-wrench"></i></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of consultants">
+      <th scope="row">{{ c.nom }}</th>
+      <th>{{ c.prenom }}</th>
+      <td>{{ c.description }}</td>
+      <td class="text-center">
+        <a title="Modifier" (click)="editConsultant(c)"><i class="far fa-edit"></i></a>
+        &nbsp;&nbsp;
+        <a title="Supprimer" (click)="deleteConsultant(c.id)"><i class="far fa-trash-alt"></i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>

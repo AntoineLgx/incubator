@@ -23,7 +23,8 @@ School project: application to list startups in incubators (angularJs)
     1. Créer des données de tests (consultants et startups) pour in-cup en
     utilisant le module in-memory-data.
 
-DONE    2. Réaliser l'affichage des informations de la startup en utilisant un tableau
+DONE
+    2. Réaliser l'affichage des informations de la startup en utilisant un tableau
     html.
     Une colonne du tableau nous indique si la startup nous a fourni une
     adresse ou pas.
@@ -32,24 +33,29 @@ DONE    2. Réaliser l'affichage des informations de la startup en utilisant un 
     description, Adresse ? (affiche oui ou non) , nom consultant , actions
     (affiche les boutons modifier et supprimer).
 
-DONE    3. La colonne nombre de co-fondateurs affiche:
+DONE
+    3. La colonne nombre de co-fondateurs affiche:
     unique si un représentant
     couple : si deux représentants
     groupes : si plus de deux représentants
     Vous devrez implémenter un pipe personnalisé pour cela.
 
-DONE    4. Un bouton placé au dessus du tableau permet d'ajouter une startup en
+DONE
+    4. Un bouton placé au dessus du tableau permet d'ajouter une startup en
     affichant un formulaire au dessus du tableau. Le formulaire doit valider les
     champs suivant les contraintes évoquées. les erreurs doivent s'afficher
     avec une couleur jaune et en gras. Tant que le formulaire n'est pas valide,
     la soumission est impossible.
 
+A FINIR 
     5. Implémenter les actions de modification et de suppression de la
     startup.
 
-DONE    6. in-cub doit disposer d'une page d'accueil disposant d'une navigation
+DONE
+    6. in-cub doit disposer d'une page d'accueil disposant d'une navigation
     (trois liens : home, consultants, startup).
 
+A FINIR
     7. le lien consultant affiche le tableau des consultants, Implémenter
     également les fonctionnalités de modification et de suppression pour les
     consultants.

@@ -1,7 +1,7 @@
 
 <div class="card shadow-sm bg-white rounded">
   <button class="btn blue is-fullwidth" (click)="hide=!hide">{{ hide == true ? "Fermer le formulaire" : "Ajouter une start-up" }}</button>
-  <app-sign-up [hidden]="!hide"></app-sign-up>
+  <app-start-up-form [hidden]="!hide"></app-start-up-form>
 </div>
 <br>
 
@@ -25,7 +25,11 @@
       <td>{{ s.description }}</td>
       <td class="text-center">{{ s.mail != null ? "oui" : "non" }}</td>
       <td>In progress</td>
-      <td class="text-center"><a (click)="editStartUp(s)"><i class="far fa-edit"></i></a>&nbsp;&nbsp;<a (click)="deleteStartUp(s)"><i class="far fa-trash-alt"></i></a></td>
+      <td class="text-center">
+        <a title="Modifier" (click)="editStartUp(s)"><i class="far fa-edit"></i></a>
+        &nbsp;&nbsp;
+        <a title="SUpprimer" (click)="deleteStartUp(s)"><i class="far fa-trash-alt"></i></a>
+      </td>
     </tr>
   </tbody>
 </table>

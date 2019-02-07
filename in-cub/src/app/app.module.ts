@@ -5,21 +5,22 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { StartUpFormComponent } from './start-up-form/start-up-form.component';
 import { StartUpListComponent } from './start-up-list/start-up-list.component';
 import { AppRoutingModule } from './app-routing-module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NbrFondateurPipe } from './start-up-list/nbr-fondateur.pipe';
+import { ConsultantListComponent } from './consultant-list/consultant-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent,
+    StartUpFormComponent,
     StartUpListComponent,
     HomeComponent,
-    SignUpComponent,
     NavbarComponent,
-    NbrFondateurPipe
+    NbrFondateurPipe,
+    ConsultantListComponent
   ],
   imports: [
     BrowserModule,

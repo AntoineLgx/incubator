@@ -6,11 +6,11 @@ import { ConsultantService } from '../consultant/consultant.service';
 import { Consultant } from '../consultant/Consultant';
 
 @Component({
-	selector: 'app-sign-up',
-	templateUrl: './sign-up.component.html',
-	styleUrls: ['./sign-up.component.css']
+	selector: 'app-start-up-form',
+	templateUrl: './start-up-form.component.html',
+	styleUrls: ['./start-up-form.component.css']
 })
-export class SignUpComponent implements OnInit {
+export class StartUpFormComponent implements OnInit {
 
 	consultants: Array<Consultant> = [];
 	startUpForm: FormGroup;

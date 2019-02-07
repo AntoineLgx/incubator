@@ -15,8 +15,6 @@ export class StartUpListComponent implements OnInit {
 
   ngOnInit() {
     this.startUps = this.startUpService.getAllStartUps();
-    this.startUps.push(new StartUp(1, "Test", "Test", "Test", 1, "Test", "Mail"));
-    this.startUps.push(new StartUp(1, "Test", "Test", "Test", 2, "Test", null));
   }
 
   deleteStartUp(startUp: StartUp){
