@@ -12,6 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NbrFondateurPipe } from './start-up-list/nbr-fondateur.pipe';
 import { ConsultantListComponent } from './consultant-list/consultant-list.component';
 import { ConsultantFormComponent } from './consultant-form/consultant-form.component';
+import { InMemoryDataService } from './in-memory/in-memory-data.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,10 @@ import { ConsultantFormComponent } from './consultant-form/consultant-form.compo
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, {dataEncapsulation: false}
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
