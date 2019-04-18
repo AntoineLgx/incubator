@@ -33,10 +33,10 @@ export class LoginComponent implements OnInit {
 
 	submitUser(){
     if(this.textButton == "register"){
-      this.registerUser();
-    }
-    else if (this.textButton == "login"){
       this.addUser();
+    }
+    if (this.textButton == "login"){
+      this.loginUser();
     }
   }
 
@@ -49,8 +49,8 @@ export class LoginComponent implements OnInit {
     this.userService.addUser(user);
   }
 
-  registerUser(){
-    this.userService.registerUser(this.userForm.value.login, this.userForm.value.password);
+  loginUser(){
+    this.userService.loginUser(this.userForm.value.login, this.userForm.value.password);
   }
   
 }

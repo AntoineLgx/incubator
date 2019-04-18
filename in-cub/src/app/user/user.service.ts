@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from './user';
 import { Router } from '@angular/router';
 
@@ -15,5 +15,9 @@ export class UserService {
   addUser(user: User){
     this.http.post<User>('/api/user', user)
     this.router.navigate(["/register"]);
+  }
+
+  loginUser(login: string, password: string){
+    this.http.get<User>(('/api/login?login=' + login + "&password=" + password));
   }
 }
