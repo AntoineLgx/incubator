@@ -56,8 +56,8 @@ export class StartUpFormComponent implements OnInit {
 			description: this.startUpForm.value.desc,
 			mail: this.startUpForm.value.mail,
 			consultant: this.startUpForm.value.consultant.id
-		  };
-		  this.startUpService.addStartUp(startUp);
-		  this.startUpForm.reset();
+		};
+		this.startUpService.addStartUp(startUp);
+		this.startUpForm.reset();
 	}
 }

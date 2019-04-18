@@ -24,13 +24,13 @@ export class ConsultantFormComponent implements OnInit {
 			nom: this.nomControl,
 			secteur: this.prenomControl,
 			desc: this.descriptionControl
-		  });
+		});
 	}
 
 	ngOnInit() {
 	}
 
-	addStartUp(){
+	addConsultant(){
 		const consultant : Consultant = {
 			id: this.consultantService.genId(),
 			nom: this.consultantForm.value.nom,

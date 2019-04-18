@@ -1,5 +1,3 @@
-import { Consultant } from '../consultant/Consultant';
-
 export class StartUp {
   constructor (
     public id: number,

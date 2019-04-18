@@ -1,67 +1,21 @@
 <div class="container">
     <br>
-    <div class="row text-center">
-        <div class="col">
-            <h1>Bienvenue sur In-Cub</h1>
-            L'incubateur des Start-ups
-        </div>
-        <div class="col">
-            <svg class="d-inline-block align-top" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-                <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
-                <g>
-                    <title>background</title>
-                    <rect fill="#74a58a" id="canvas_background" height="80" width="80" y="-1" x="-1"/>
-                    <g display="none" id="canvasGrid">
-                        <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%" id="svg_1"/>
-                    </g>
-                </g>
-                <g>
-                    <title>Layer 1</title>
-                    <path id="svg_8" d="m313.5,107.4375" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>
-                    <path id="svg_10" d="m329.5,153.4375" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="1.5" stroke="#000" fill="#fff"/>
-                    <line fill="none" stroke-width="54" x1="234.75" y1="0.000013" x2="234.75" y2="402.999993" id="svg_2" stroke-linejoin="null" stroke-linecap="null" stroke="#f9f9f9"/>
-                    <ellipse fill="none" stroke="#f9f9f9" stroke-width="51" cx="397" cy="196" id="svg_4" rx="161" ry="160"/>
-                    <rect fill="#74a58a" stroke-width="99" x="442.500002" y="4" width="168.999999" height="402.000003" id="svg_7"/>
-                    <line stroke="null" stroke-linecap="null" stroke-linejoin="null" id="svg_3" y2="32.357235" x2="37.098676" y1="3.576775" x1="37.098676" stroke-width="5" fill="none"/>
-                    <ellipse stroke="#ffffff" stroke-width="6" ry="16.360687" rx="16" id="svg_11" cy="17.696124" cx="31.311992" fill-opacity="null" stroke-opacity="null" fill="none"/>
-                    <rect id="svg_14" height="36.699721" width="13.525696" y="-0.265325" x="31.751126" stroke-width="2" fill="#74a58a"/>
-                    <line stroke="#ffffff" stroke-linecap="null" stroke-linejoin="null" id="svg_16" y2="36.163881" x2="7.495044" y1="0.005188" x1="7.404873" stroke-width="6" fill="none"/>
-                </g>
-            </svg>
-        </div>
+    <div class="text-center">
+        <h1>Bienvenue sur In-Cub</h1>
+        L'incubateur des Start-ups
     </div>
 
     <br>
     <hr>
     <h3>Start-ups :</h3>
     <div class="row">
-        <div class="col">
+        <div class="col" *ngFor="let s of startups">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">NOM Start-up</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Couple de co-fondateurs</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <h6 class="card-subtitle mb-2 text-muted">Consultant : NOM Prenom</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">NOM Start-up</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Unique fondateur</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <h6 class="card-subtitle mb-2 text-muted">Consultant : NOM Prenom</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">NOM Start-up</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <h6 class="card-subtitle mb-2 text-muted">Consultant : NOM Prenom</h6>
+                    <h4 class="card-title">{{ s.nom }}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ s.nbrFondateurs | nbrFondateur }}</h6>
+                    <p class="card-text">{{ s.description }}</p>
+                    <!--<h6 class="card-subtitle mb-2 text-muted">Consultant : NOM Prenom</h6>-->
                 </div>
             </div>
         </div>
@@ -77,32 +31,15 @@
     <hr>
     <h3>Consultants :</h3>
     <div class="row">
-        <div class="col">
+        <div class="col" *ngFor="let c of consultants">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">NOM Prenom</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">NOM Prenom</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">NOM Prenom</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h4 class="card-title">{{ c.nom | uppercase }} {{ c.prenom }}</h4>
+                    <p class="card-text">{{ c.description }}</p>
                 </div>
             </div>
         </div>
     </div>
-
     <br>
     <button class="btn blue" [routerLink]="['/consultants']" style="width: 100%;">
         See more

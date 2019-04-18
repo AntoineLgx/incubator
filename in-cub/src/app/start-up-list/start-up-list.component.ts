@@ -17,8 +17,8 @@ export class StartUpListComponent implements OnInit {
     this.startUps = this.startUpService.getAllStartUps();
   }
 
-  deleteStartUp(startUp: StartUp){
-
+  deleteStartUp(id: number){
+    this.startUpService.removeStartUp(id)
   }
 
   editStartUp(startUp: StartUp){

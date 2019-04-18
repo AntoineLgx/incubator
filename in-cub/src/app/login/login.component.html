@@ -1,0 +1,22 @@
+<br>
+<div class="container">
+  <form (ngSubmit)="submitUser()" [formGroup]="userForm">
+
+    <label for="login">Login :</label>
+    <input type="text" class="form-control" formControlName="login" placeholder="login">
+    <small class="form-text bg-warning text-center font-weight-bold" *ngIf="loginControl.dirty && loginControl.hasError('maxlength')">Le nom doit avoir 20 caractères maximum</small>
+    <small class="form-text bg-warning text-center font-weight-bold" *ngIf="loginControl.dirty && loginControl.hasError('required')">Le nom est obligatoire</small>
+    <small class="form-text text-muted" *ngIf="!(loginControl.hasError('maxlength') || loginControl.hasError('required'))">(20 caractères maximum)</small>
+
+    <label for="password">Mot de passe :</label>
+    <input type="text" class="form-control" formControlName="password" placeholder="password">
+    <small class="form-text bg-warning text-center font-weight-bold" *ngIf="passwordControl.dirty && passwordControl.hasError('maxlength')">Le nom doit avoir 20 caractères maximum</small>
+    <small class="form-text bg-warning text-center font-weight-bold" *ngIf="passwordControl.dirty && passwordControl.hasError('required')">Le prenom est obligatoire</small>
+    <small class="form-text text-muted" *ngIf="!(passwordControl.hasError('maxlength') || passwordControl.hasError('required'))">(20 caractères maximum)</small>
+
+    <hr>
+    
+    <button type="submit" class="btn blue is-fullwidth" [disabled]="userForm.invalid">{{ textButton }}</button>
+
+  </form>
+</div>

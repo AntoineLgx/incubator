@@ -14,6 +14,8 @@ import { ConsultantListComponent } from './consultant-list/consultant-list.compo
 import { ConsultantFormComponent } from './consultant-form/consultant-form.component';
 import { InMemoryDataService } from './in-memory/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { NotFound404Component } from './not-found404/not-found404.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     NavbarComponent,
     NbrFondateurPipe,
     ConsultantListComponent,
-    ConsultantFormComponent
+    ConsultantFormComponent,
+    NotFound404Component,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

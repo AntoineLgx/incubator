@@ -1,6 +1,4 @@
-<title>{{ title }}</title>
-
-<app-navbar></app-navbar>
+<app-navbar *ngIf="exists"></app-navbar>
 <br>
 <div class="container">
     <router-outlet></router-outlet>

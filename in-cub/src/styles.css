@@ -6,14 +6,25 @@
 .navbar-current{
     background-color: #79a08b;
 }
+
 .blue{
     background-color: #798ea0;
     color: #ffffff;
     font-weight: bold;
 }
+
 .top-buffer { 
     margin-top:20px; 
 }
+
 .is-fullwidth{
     width : 100%;
+}
+
+.btn {
+    transition: box-shadow .3s;
+}
+
+.btn:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }

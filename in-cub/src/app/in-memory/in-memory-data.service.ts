@@ -21,7 +21,7 @@ export class InMemoryDataService {
       {id: 2, nom: "Pete", prenom: "Gally", description: "Une description un peu plus longue pour ce consultant"},
       {id: 3, nom: "Leletti", prenom: "Rocky", description: "Eodem tempore etiam Hymetii praeclarae indolis viri negotium est actitatum, cuius hunc novimus esse textum."},
       {id: 4, nom: "AykannFlaï", prenom: "Abdel-Yves", description: "Nemo quaeso miretur, si post exsudatos labores itinerum longos."}
-    ]
+    ];
 
     return {startups, consultants};
   }
