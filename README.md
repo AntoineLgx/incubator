@@ -95,6 +95,7 @@ OK    3. Le découpage des templates des card est obligatoire.
 
 OK    4. L’utilisation d’un dépôt git pour gérer l’application est obligatoire
 
+______________________________
 
 ## Execution de l'application
 
@@ -106,3 +107,11 @@ Exécuter ensuite l'API : `node server.js` ou bien `nodemon server.js`
 ### Pour l'application front
 Se déplacer dans le dossier in-cub, executer `npm i`
 S'assurer d'avoir les package ng-cli en global pour executer le serveur avec `ng serve`
+
+### Si l'application BUG
+
+Il peut y avoir une erreur de compilation, dans ce cas la : 
+`ERROR in Cannot read property 'loadChildren' of undefined`
+Il faut sauvegarder un des fichiers et le ng serve va recharger et il n'y aura plus d'erreur.
+
+Dans les ajouts de startup ou consultant, il se peut que la liste ne se mette pas à jour. Dans ce cas la, changer d'onglet et revenir recharge la liste à jour.
