@@ -54,8 +54,9 @@ export class StartUpFormComponent implements OnInit {
 			nbrFondateurs: parseInt(this.startUpForm.value.fondateurs),
 			description: this.startUpForm.value.desc,
 			mail: this.startUpForm.value.mail,
-			consultant: this.startUpForm.value.consultant.id ? this.startUpForm.value.consultant.id : null
+			consultant: this.startUpForm.value.consultant != null ? this.startUpForm.value.consultant.id : null
 		};
+		console.log(startUp);
 		this.startUpService.addStartUp(startUp);
 		this.startUpForm.reset();
 	}
