@@ -14,7 +14,8 @@ export class ConsultantListComponent implements OnInit {
   constructor(private consultantService: ConsultantService) { }
 
   ngOnInit() {
-    this.consultants = []
+    this.consultants = [];
+    console.log("Ng on init get all consultalts");
     this.consultants = this.consultantService.getAllConsultants();
   }
 

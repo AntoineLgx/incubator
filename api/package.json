@@ -1,0 +1,37 @@
+{
+  "name": "Hub_polux",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "mathjs": "^5.4.2",
+    "mdbootstrap": "^4.7.0",
+    "moment": "^2.24.0",
+    "mongodb": "^3.1.6",
+    "mongoose": "^5.2.15",
+    "npm-watch": "^0.4.0",
+    "password-hash": "^1.2.2",
+    "path": "^0.12.7",
+    "pug": "^2.0.3",
+    "shelljs": "^0.8.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "scripts": {
+    "test": "tape test/*.js",
+    "watch": "npm-watch",
+    "start": "app.js",
+    "stop": "pkill --signal SIGINT hub_polux"
+  },
+  "watch": {
+    "test": "app.js"
+  },
+  "author": "Antoine Deport",
+  "license": "ISC"
+}

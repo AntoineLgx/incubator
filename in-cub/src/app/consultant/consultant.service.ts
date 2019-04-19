@@ -12,18 +12,27 @@ export class ConsultantService {
   constructor(private http: HttpClient) { }
   
   getAllConsultants(){
+    console.log("getting all consultants");
     this.consultants = [];
-    this.http.get<Consultant[]>(`/api/Consultants`).subscribe(
-      consultants => consultants.map(consultant => this.consultants.push(consultant))
+    this.http.get<Consultant[]>('http://localhost:3000/consultants').subscribe(
+      
+      consultants => consultants.map(consultant => 
+
+        {
+          console.log(consultant);
+          this.consultants.push(consultant);
+        })
+      
     );
     // this.consultants.push(new Consultant(1, "Test", "Test", "Test"));
     // this.consultants.push(new Consultant(2, "Nom", "Prenom", "Test"));
     // this.consultants.push(new Consultant(2, "Nom", "Prenom", "Test"));
+    console.log("Consultants",this.consultants);
     return this.consultants;
   }
 
   getConsultant(id: number){
-    return this.http.get<Consultant>('/api/consultants/' + id)
+    return this.http.get<Consultant>('http://localhost:3000/consultant/' + id)
   }
 
   addConsultant(consultant: Consultant){

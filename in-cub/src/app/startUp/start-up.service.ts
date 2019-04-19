@@ -8,12 +8,13 @@ import { HttpClient } from '@angular/common/http';
 export class StartUpService {
 
   startUps: Array<StartUp> = [];
-
+  url = "http://localhost:3000/startup/";
   constructor(private http: HttpClient) { }
 
   getAllStartUps(){
     this.startUps = [];
-    this.http.get<StartUp[]>(`/api/startups`).subscribe(
+    
+    this.http.get<StartUp[]>('http://localhost:3000/startups').subscribe(
       startUps => startUps.map(startUp => this.startUps.push(startUp))
     );
     //  this.startUps.push(new StartUp(1, "Test", "Test", "Test", 1, "Test", "Mail", null));
@@ -23,19 +24,19 @@ export class StartUpService {
   }
 
   getStartUp(id: number){
-    return this.http.get<StartUp>('/api/startups/' + id)
+    return this.http.get<StartUp>(this.url + id);
   }
 
   addStartUp(startUp: StartUp){
-    this.http.post<StartUp>('/api/startups', startUp)
+    this.http.post<StartUp>(this.url, startUp);
   }
 
   updateStartUp(startUp: StartUp){
-    this.http.put<StartUp>('/api/startups', startUp)
+    this.http.put<StartUp>(this.url, startUp);
   }
 
   removeStartUp(id: number){
-    this.http.delete<StartUp>('/api/startups/' + id)
+    this.http.get<StartUp>(this.url + id);
   }
 
   genId(): number{

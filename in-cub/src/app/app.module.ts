@@ -37,7 +37,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false}
+      InMemoryDataService, {dataEncapsulation: false,passThruUnknownUrl: true}
     )
   ],
   providers: [],
