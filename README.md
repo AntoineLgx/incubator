@@ -81,6 +81,7 @@ DONE
     utilisateurs auront le droit de se connecter à l’application et de gérer les
     startup et les consultants.
 
+A FAIRE
     12. [Bonus] Ajouter la possibilité de se connecter avec son compte
     facebook.
 
