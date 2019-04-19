@@ -15,7 +15,7 @@
           <label for="prenom">Prénom :</label>
           <input type="text" class="form-control" formControlName="prenom" placeholder="Prenom">
           <small class="form-text bg-warning text-center font-weight-bold" *ngIf="prenomControl.dirty && prenomControl.hasError('maxlength')">Le nom doit avoir 20 caractères maximum</small>
-          <small class="form-text bg-warning text-center font-weight-bold" *ngIf="prenomControl.dirty && prenomControlControl.hasError('required')">Le prenom est obligatoire</small>
+          <small class="form-text bg-warning text-center font-weight-bold" *ngIf="prenomControl.dirty && prenomControl.hasError('required')">Le prenom est obligatoire</small>
           <small class="form-text text-muted" *ngIf="!(prenomControl.hasError('maxlength') || prenomControl.hasError('required'))">(20 caractères maximum)</small>
       </div>
 

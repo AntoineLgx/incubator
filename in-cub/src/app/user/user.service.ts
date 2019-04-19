@@ -8,12 +8,13 @@ import { Router } from '@angular/router';
 })
 export class UserService {
 
-  user: User = null;
+  user: string = null;
+  url: string = 'localhost:3000/'
 
   constructor(private http: HttpClient, private router: Router) { }
 
   addUser(user: User){
-    this.http.post<User>('localhost:3000/createAccount  ', user).subscribe((response) => {
+    this.http.post<User>(this.url + 'createAccount  ', user).subscribe((response) => {
         /* this function is executed every time there's a new output */
         console.log("VALUE RECEIVED: "+response);
       })
@@ -21,6 +22,9 @@ export class UserService {
   }
 
   loginUser(login: string, password: string){
-    this.http.post<User>('localhost:3000/login',{login : login, password:password});
+    this.http.post<string>(this.url + 'login',{login : login, password:password}).subscribe(
+      (response) => {
+        this.user = response;     
+    });
   }
 }

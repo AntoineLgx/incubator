@@ -22,7 +22,7 @@ export class ConsultantFormComponent implements OnInit {
 
 		this.consultantForm = this.fb.group({
 			nom: this.nomControl,
-			secteur: this.prenomControl,
+			prenom: this.prenomControl,
 			desc: this.descriptionControl
 		});
 	}

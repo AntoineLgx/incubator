@@ -41,7 +41,7 @@ import { ConsultantCard } from './home/consultantCard';
     HttpClientModule,
     AppRoutingModule,
     HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {dataEncapsulation: false,passThruUnknownUrl: true}
+      InMemoryDataService, {dataEncapsulation: false, passThruUnknownUrl: true}
     )
   ],
   providers: [],

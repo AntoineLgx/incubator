@@ -92,7 +92,7 @@ var self = module.exports =  {
         var login = req.body.login;
         User.findOne( {name:login, password:encrypted}, function(err, user) {
             if (user != null) {        
-                res.json(user);
+                res.json(user.login);
             }else {
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 var array = {"authentification" : false, message : "Wrong password"};
@@ -116,7 +116,7 @@ var self = module.exports =  {
         var user = new User( {nom:req.body.login, password:encrypted});
         user.save(function (err, startup) {
             if (err)
-                res.send(err);
+                res.json(err);
             res.json(startup);
         })
     }

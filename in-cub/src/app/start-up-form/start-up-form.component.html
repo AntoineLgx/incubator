@@ -55,7 +55,6 @@
         <select type="" class="form-control" formControlName="consultant" >
           <option *ngFor="let c of consultants" [value]="c.nom">{{ c.nom }} {{ c.prenom }}</option>
         </select>
-        <small class="form-text bg-warning text-center font-weight-bold" *ngIf="consultantControl.dirty && consultantControl.hasError('required')">Vous devez choisir un consultant</small>
       </div>
 
     </div>

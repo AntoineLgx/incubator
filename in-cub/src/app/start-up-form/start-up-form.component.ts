@@ -29,7 +29,6 @@ export class StartUpFormComponent implements OnInit {
 		this.nbrFondaControl = this.fb.control('', [Validators.pattern('^[0-9]*$'), Validators.required]);
 		this.descriptionControl = this.fb.control('', [Validators.required, Validators.maxLength(250)]);
 		this.emailControl = this.fb.control('', [Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'), Validators.maxLength(25)]);
-		this.consultantControl = this.fb.control('', Validators.required);
 
 		this.startUpForm = this.fb.group({
 			nom: this.nomControl,
@@ -55,7 +54,7 @@ export class StartUpFormComponent implements OnInit {
 			nbrFondateurs: parseInt(this.startUpForm.value.fondateurs),
 			description: this.startUpForm.value.desc,
 			mail: this.startUpForm.value.mail,
-			consultant: this.startUpForm.value.consultant.id
+			consultant: this.startUpForm.value.consultant.id ? this.startUpForm.value.consultant.id : null
 		};
 		this.startUpService.addStartUp(startUp);
 		this.startUpForm.reset();

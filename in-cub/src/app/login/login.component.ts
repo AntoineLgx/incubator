@@ -16,10 +16,11 @@ export class LoginComponent implements OnInit {
   passwordControl: FormControl;
   buttonSubmit: string;
   buttonOtherPage: string;
+  message: string = null;
 
 	constructor(private userService: UserService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router) { 
 		this.loginControl = this.fb.control('', [Validators.required, Validators.maxLength(20)]);
-		this.passwordControl = this.fb.control('', [Validators.required, Validators.maxLength(20)]);
+		this.passwordControl = this.fb.control('', [Validators.required]);
 
 		this.userForm = this.fb.group({
 			login: this.loginControl,
