@@ -22,6 +22,7 @@ export class ConsultantListComponent implements OnInit {
   deleteConsultant(id: number){
     console.log("delete consultant ",id);
     this.consultantService.removeConsultant(id);
+    this.consultants = this.consultantService.getAllConsultants();
   }
 
   editConsultant(consultant: Consultant){

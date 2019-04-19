@@ -19,6 +19,7 @@ export class StartUpListComponent implements OnInit {
 
   deleteStartUp(id: number){
     this.startUpService.removeStartUp(id)
+    this.startUps = this.startUpService.getAllStartUps();
   }
 
   editStartUp(startUp: StartUp){
