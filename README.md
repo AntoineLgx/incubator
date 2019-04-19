@@ -1,7 +1,9 @@
 # incubator
 School project: application to list startups in incubators (angularJs)
 
->> Context:
+## Consignes
+
+### Context:
     Application de gestion des candidatures pour un incubateur de startup. (in-cub)
     L'incubateur reçoit des candidatures de startup. L'objectif est de réaliser un
     proof of concept Pour la gestion de ces candidatures.
@@ -16,8 +18,7 @@ School project: application to list startups in incubators (angularJs)
     Pendant la création d'une startup,On doit sélectionner un consultant dans la
     liste des consultants.
 
->> Travail à faire :
-
+### Travail à faire :
 DONE
     1. Créer des données de tests (consultants et startups) pour in-cup en
     utilisant le module in-memory-data.
@@ -83,7 +84,7 @@ DONE
     12. [Bonus] Ajouter la possibilité de se connecter avec son compte
     facebook.
 
->> Contraintes de conception:
+### Contraintes de conception:
 
 OK    1. L'utilisation des services est obligatoire
 
