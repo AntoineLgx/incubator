@@ -15,6 +15,7 @@ var self = module.exports =  {
     },
     addStartup(req,res){
         let startup = new StartUp(req.body);
+        console.log(startup);
         startup.save(function(err,startup){
             if(err){
                 res.json(err);

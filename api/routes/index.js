@@ -19,39 +19,43 @@ module.exports = function(app){
         .get(function(req,res){
             StartUpController.getConsultant(req,res);
         })
-    app
-        .route("/deleteConsultant/:id")
-        .get(function(req,res){
+        .put(function(req,res){
+            StartUpController.updateConsultant(req,res);
+        })
+        .delete(function(req,res){
             StartUpController.removeConsultant(req,res);
         })
+        
     app
         .route("/consultant")
         .post(function(req,res){
             StartUpController.addConsultant(req,res);
         })
+       
     app
         .route('/consultants')
         .get(function(req,res){
             StartUpController.getAllConsultant(req,res);
         })
-    app
-        .route("/updateConsultant")
-        .post(function(req,res){
-            StartUpController.updateConsultant(req,res);
-        })
+   
+
     app
         .route("/startup/:id")
         .get(function(req,res){
             StartUpController.getStartup(req,res);
         })
-        .post(function(req,res){
-            StartUpController.addStartup(req,res);
-        })
+       
         .delete(function(req,res){
             StartUpController.removeStartup(req,res);
         })
         .put(function(req,res){
             StartUpController.updateStartup(req,res);
+        })
+    app
+        .route("/startup") 
+        .post(function(req,res){
+            console.log("creating startup");
+            StartUpController.addStartup(req,res);
         })
   
    
