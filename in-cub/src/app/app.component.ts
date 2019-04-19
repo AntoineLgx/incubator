@@ -16,7 +16,7 @@ export class AppComponent {
   ngOnInit() {
     this.router.events.subscribe((data) => {
       if (data instanceof RoutesRecognized && data.state.root.firstChild != null) {
-        this.exists = !data.state.root.firstChild.data[0]['404'];
+        this.exists = !data.state.root.firstChild.data['404'];
         console.log(this.exists);
       }
     });

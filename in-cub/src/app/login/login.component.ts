@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
 			password: this.passwordControl
     });
     
-    this.buttonSubmit = this.route.snapshot.data[0]['state'] == "login" ? "Connexion" : "Inscription";
-    this.buttonOtherPage = this.route.snapshot.data[0]['state'] == "login" ? "Inscription" : "Connexion";
+    this.buttonSubmit = this.route.snapshot.data['state'] == "login" ? "Connexion" : "Inscription";
+    this.buttonOtherPage = this.route.snapshot.data['state'] == "login" ? "Inscription" : "Connexion";
 	}
 
 	ngOnInit() {

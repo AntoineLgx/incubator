@@ -17,7 +17,8 @@ export class HomeComponent implements OnInit {
   constructor(private startupService: StartUpService, private consultantService: ConsultantService) { }
 
   ngOnInit() {
-    this.startups = this.startupService.getAllStartUps().reverse().slice(0,3) ;
+    this.startups = this.startupService.getAllStartUps().reverse();
+    this.startups.length = 3;
     this.consultants = this.consultantService.getAllConsultants().reverse().slice(0,3);
   }
 

@@ -11,7 +11,7 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser');
 
-require('./model/model');
+require('./models/model');
 mongoose.connect('mongodb://localhost:27017/Startup');
 
 

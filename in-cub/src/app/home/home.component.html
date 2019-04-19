@@ -10,14 +10,7 @@
     <h3>Start-ups :</h3>
     <div class="row">
         <div class="col" *ngFor="let s of startups">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">{{ s.nom }}</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">{{ s.nbrFondateurs | nbrFondateur }}</h6>
-                    <p class="card-text">{{ s.description }}</p>
-                    <!--<h6 class="card-subtitle mb-2 text-muted">Consultant : NOM Prenom</h6>-->
-                </div>
-            </div>
+            <card-start-up [startUp]='s'></card-start-up>
         </div>
     </div>
     <br>
@@ -32,12 +25,7 @@
     <h3>Consultants :</h3>
     <div class="row">
         <div class="col" *ngFor="let c of consultants">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">{{ c.nom | uppercase }} {{ c.prenom }}</h4>
-                    <p class="card-text">{{ c.description }}</p>
-                </div>
-            </div>
+            <card-consultant [consultant]='c'></card-consultant>
         </div>
     </div>
     <br>

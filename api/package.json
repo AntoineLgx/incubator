@@ -21,7 +21,7 @@
     "shelljs": "^0.8.2"
   },
   "devDependencies": {
-    "nodemon": "^1.18.4"
+    "nodemon": "^1.18.11"
   },
   "scripts": {
     "test": "tape test/*.js",

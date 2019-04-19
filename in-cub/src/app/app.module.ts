@@ -16,6 +16,8 @@ import { InMemoryDataService } from './in-memory/in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { NotFound404Component } from './not-found404/not-found404.component';
 import { LoginComponent } from './login/login.component';
+import { StartUpCard } from './home/startUpCard';
+import { ConsultantCard } from './home/consultantCard';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { LoginComponent } from './login/login.component';
     ConsultantListComponent,
     ConsultantFormComponent,
     NotFound404Component,
-    LoginComponent
+    LoginComponent,
+    StartUpCard,
+    ConsultantCard
   ],
   imports: [
     BrowserModule,
