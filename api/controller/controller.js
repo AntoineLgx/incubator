@@ -58,7 +58,7 @@ var self = module.exports =  {
         });
     },
     removeConsultant(req,res){
-        //id
+        console.log("delete consultant" + req.params);
         Consultant.findByIdAndRemove(req.params.id, function(err,Consultant){
             res.json(Consultant);
         });
@@ -91,9 +91,10 @@ var self = module.exports =  {
         var crypted = cipher.update(req.body.password, 'utf8', 'hex');
         var encrypted = cipher.final('hex');
         var login = req.body.login;
-        User.findOne( {name:login, password:encrypted}, function(err, user) {
+        User.findOne( {nom:login, password:encrypted}, function(err, user) {
+            console.log(user);
             if (user != null) {        
-                res.json(user.login);
+                res.json(user);
             }else {
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 var array = {"authentification" : false, message : "Wrong password"};

@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class UserService {
 
   user: string = null;
-  url: string = 'localhost:3000/'
+  url: string = 'http://localhost:3000/'
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -18,13 +18,18 @@ export class UserService {
         /* this function is executed every time there's a new output */
         console.log("VALUE RECEIVED: "+response);
       })
-    this.router.navigate(["/register"]);
+    this.router.navigate(["/login"]);
   }
 
   loginUser(login: string, password: string){
     this.http.post<string>(this.url + 'login',{login : login, password:password}).subscribe(
       (response) => {
-        this.user = response;     
+        console.log(response);
+         
+        if(response['message'] == null){
+          this.user = response;
+          this.router.navigate(["/"]);  
+        }
     });
   }
 }

@@ -7,7 +7,7 @@ module.exports = function(app){
     app
         .route("/")
         .get(function(req,res){
-            res.render('home');
+            
         })
     app
         .route("/createAccount")
@@ -29,6 +29,7 @@ module.exports = function(app){
     app
         .route("/consultant")
         .post(function(req,res){
+            console.log("adding consultant");
             StartUpController.addConsultant(req,res);
         })
        
@@ -38,7 +39,12 @@ module.exports = function(app){
             StartUpController.getAllConsultant(req,res);
         })
    
-
+    app
+        .route("/startup") 
+        .post(function(req,res){
+            console.log("creating startup");
+            StartUpController.addStartup(req,res);
+        })
     app
         .route("/startup/:id")
         .get(function(req,res){
@@ -51,12 +57,7 @@ module.exports = function(app){
         .put(function(req,res){
             StartUpController.updateStartup(req,res);
         })
-    app
-        .route("/startup") 
-        .post(function(req,res){
-            console.log("creating startup");
-            StartUpController.addStartup(req,res);
-        })
+   
   
    
         

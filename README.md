@@ -92,3 +92,15 @@ OK    2. L’utilisation du service http est obligatoire
 OK    3. Le découpage des templates des card est obligatoire.
 
 OK    4. L’utilisation d’un dépôt git pour gérer l’application est obligatoire
+
+
+## Execution de l'application
+
+### Pour l'API 
+
+Se déplacer dans le dossier API et faire un `npm i `
+Exécuter ensuite l'API : `node server.js` ou bien `nodemon server.js`
+
+### Pour l'application front
+Se déplacer dans le dossier in-cub, executer `npm i`
+S'assurer d'avoir les package ng-cli en global pour executer le serveur avec `ng serve`

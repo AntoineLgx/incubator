@@ -26,7 +26,8 @@ export class StartUpService {
   }
 
   addStartUp(startUp: StartUp){
-    this.http.post<StartUp>("http://localhost:3000/startup", startUp);
+  
+    this.http.post("http://localhost:3000/startup", startUp).subscribe(res => console.log(res));
   }
 
   updateStartUp(startUp: StartUp){

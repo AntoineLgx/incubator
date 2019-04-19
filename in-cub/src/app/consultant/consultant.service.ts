@@ -10,7 +10,7 @@ export class ConsultantService {
   consultants: Array<Consultant> = []
 
   constructor(private http: HttpClient) { }
-  
+  url = "http://localhost:3000/consultant/";
   getAllConsultants(){
     this.consultants = [];
     this.http.get<Consultant[]>('http://localhost:3000/consultants').subscribe(
@@ -32,15 +32,17 @@ export class ConsultantService {
   }
 
   addConsultant(consultant: Consultant){
-    this.http.post<Consultant>('/api/consultants', consultant)
+    console.log("add consultant");
+    this.http.post(this.url, consultant).subscribe(res => console.log(res));
   }
 
   updateConsultant(consultant: Consultant){
-    this.http.put<Consultant>('/api/consultants', consultant)
+    this.http.put<Consultant>(this.url + consultant.id, consultant).subscribe(res => console.log(res));
   }
 
   removeConsultant(id: number){
-    this.http.delete<Consultant>('/api/consultants/' + id);
+    console.log("remove consultant",id);
+    this.http.delete<Consultant>(this.url + id).subscribe(res => console.log(res));
   }
 
   genId(): number{
