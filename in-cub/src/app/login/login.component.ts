@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from '../user/user.service';
 import { User } from '../user/user';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,9 +14,10 @@ export class LoginComponent implements OnInit {
   userForm: FormGroup;
 	loginControl: FormControl;
   passwordControl: FormControl;
-  textButton: string;
+  buttonSubmit: string;
+  buttonOtherPage: string;
 
-	constructor(private userService: UserService, private fb: FormBuilder, private route: ActivatedRoute) { 
+	constructor(private userService: UserService, private fb: FormBuilder, private route: ActivatedRoute, private router: Router) { 
 		this.loginControl = this.fb.control('', [Validators.required, Validators.maxLength(20)]);
 		this.passwordControl = this.fb.control('', [Validators.required, Validators.maxLength(20)]);
 
@@ -25,17 +26,27 @@ export class LoginComponent implements OnInit {
 			password: this.passwordControl
     });
     
-    this.textButton = this.route.snapshot.data[0]['state'];
+    this.buttonSubmit = this.route.snapshot.data[0]['state'] == "login" ? "Connexion" : "Inscription";
+    this.buttonOtherPage = this.route.snapshot.data[0]['state'] == "login" ? "Inscription" : "Connexion";
 	}
 
 	ngOnInit() {
-	}
+  }
+  
+  changePage(){
+    if(this.buttonOtherPage == "Inscription"){
+      this.router.navigate(['/register']);
+    }
+    if (this.buttonOtherPage == "Connexion"){
+      this.router.navigate(['/login']);
+    }
+  }
 
 	submitUser(){
-    if(this.textButton == "register"){
+    if(this.buttonSubmit == "Inscription"){
       this.addUser();
     }
-    if (this.textButton == "login"){
+    if (this.buttonSubmit == "Connexion"){
       this.loginUser();
     }
   }

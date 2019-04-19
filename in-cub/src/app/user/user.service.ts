@@ -13,7 +13,7 @@ export class UserService {
   constructor(private http: HttpClient, private router: Router) { }
 
   addUser(user: User){
-    this.http.post<User>('/api/user', user)
+    this.http.post<User>('/api/user', user);
     this.router.navigate(["/register"]);
   }
 
