@@ -21,8 +21,8 @@ export class StartUpService {
     return this.startUps;
   }
 
-  getStartUp(id: number){
-    return this.http.get<StartUp>(this.url + id);
+  getStartUp(_id: number){
+    return this.http.get<StartUp>(this.url + _id);
   }
 
   addStartUp(startUp: StartUp){
@@ -34,12 +34,12 @@ export class StartUpService {
     this.http.put<StartUp>(this.url, startUp);
   }
 
-  removeStartUp(id: number){
-    this.http.get<StartUp>(this.url + id);
+  deleteStartUp(_id: number){
+    this.http.delete<StartUp>(this.url + _id).subscribe(res => console.log(res));
   }
 
   genId(): number{
     this.getAllStartUps();
-    return this.startUps.length > 0 ? Math.max(...this.startUps.map(s => s.id)) + 1 : 1;
+    return this.startUps.length > 0 ? Math.max(...this.startUps.map(s => s._id)) + 1 : 1;
   }
 }

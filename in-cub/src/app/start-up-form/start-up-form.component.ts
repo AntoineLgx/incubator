@@ -48,7 +48,7 @@ export class StartUpFormComponent implements OnInit {
 
 	addStartUp(){
 		const startUp : StartUp = {
-			id: this.startUpService.genId(),
+			_id : this.startUpService.genId(),
 			nom: this.startUpForm.value.nom,
 			secteur: this.startUpForm.value.secteur,
 			representantLegal: this.startUpForm.value.repLeg,

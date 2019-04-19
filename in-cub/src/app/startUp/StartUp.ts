@@ -1,6 +1,6 @@
 export class StartUp {
   constructor (
-    public id: number,
+    public _id: number,
     public nom: string,
     public secteur: string,
     public representantLegal: string,

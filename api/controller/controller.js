@@ -16,6 +16,8 @@ var self = module.exports =  {
     addStartup(req,res){
         let startup = new StartUp(req.body);
         console.log(startup);
+        startup._id = null;
+        delete  startup._id;
         startup.save(function(err,startup){
             if(err){
                 res.json(err);
@@ -44,6 +46,8 @@ var self = module.exports =  {
     },
     addConsultant(req,res){
         let consultant = new Consultant(req.body);
+        consultant._id = null;
+        delete  consultant._id;
         consultant.save(function(err,consultant){
             if(err){
                 res.json(err);

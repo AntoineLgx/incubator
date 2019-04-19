@@ -33,7 +33,7 @@ export class ConsultantFormComponent implements OnInit {
 
 	addConsultant(){
 		const consultant : Consultant = {
-			id: this.consultantService.genId(),
+			_id: this.consultantService.genId(),
 			nom: this.consultantForm.value.nom,
 			prenom: this.consultantForm.value.prenom,
 			description: this.consultantForm.value.desc

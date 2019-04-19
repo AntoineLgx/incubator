@@ -27,8 +27,8 @@ export class ConsultantService {
     return this.consultants;
   }
 
-  getConsultant(id: number){
-    return this.http.get<Consultant>('http://localhost:3000/consultant/' + id)
+  getConsultant(_id: number){
+    return this.http.get<Consultant>('http://localhost:3000/consultant/' + _id)
   }
 
   addConsultant(consultant: Consultant){
@@ -37,7 +37,7 @@ export class ConsultantService {
   }
 
   updateConsultant(consultant: Consultant){
-    this.http.put<Consultant>(this.url + consultant.id, consultant).subscribe(res => console.log(res));
+    this.http.put<Consultant>(this.url + consultant._id, consultant).subscribe(res => console.log(res));
   }
 
   removeConsultant(id: number){
@@ -47,6 +47,6 @@ export class ConsultantService {
 
   genId(): number{
     this.getAllConsultants();
-    return this.consultants.length > 0 ? Math.max(...this.consultants.map(s => s.id)) + 1 : 1;
+    return this.consultants.length > 0 ? Math.max(...this.consultants.map(s => s._id)) + 1 : 1;
   }
 }

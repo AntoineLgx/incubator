@@ -28,7 +28,7 @@
       <td class="text-center">
         <a title="Modifier" style="cursor: pointer;" (click)="editStartUp(s)"><i class="far fa-edit"></i></a>
         &nbsp;&nbsp;
-        <a title="SUpprimer" style="cursor: pointer;" (click)="deleteStartUp(s.id)"><i class="far fa-trash-alt"></i></a>
+        <a let id = s.id title="SUpprimer" style="cursor: pointer;" (click)="deleteStartUp(s._id)"><i class="far fa-trash-alt"></i></a>
       </td>
     </tr>
   </tbody>
