@@ -18,8 +18,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.startups = this.startupService.getAllStartUps().reverse();
-    this.startups.length = 3;
-    this.consultants = this.consultantService.getAllConsultants().reverse().slice(0,3);
+    if (this.startups.length > 3)
+      this.startups.length = 3;
+    this.consultants = this.consultantService.getAllConsultants().reverse();
+    if (this.consultants.length > 3)
+      this.consultants.length = 3;
   }
 
 }
