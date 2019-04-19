@@ -18,8 +18,8 @@ export class StartUpListComponent implements OnInit {
   }
 
   deleteStartUp(_id: number){
-    console.log(_id);
     this.startUpService.deleteStartUp(_id)
+    this.startUps = this.startUpService.getAllStartUps();
   }
 
   editStartUp(startUp: StartUp){
