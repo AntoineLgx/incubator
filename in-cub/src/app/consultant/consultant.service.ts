@@ -12,7 +12,6 @@ export class ConsultantService {
   constructor(private http: HttpClient) { }
   
   getAllConsultants(){
-    console.log("getting all consultants");
     this.consultants = [];
     this.http.get<Consultant[]>('http://localhost:3000/consultants').subscribe(
       
@@ -24,10 +23,7 @@ export class ConsultantService {
         })
       
     );
-    // this.consultants.push(new Consultant(1, "Test", "Test", "Test"));
-    // this.consultants.push(new Consultant(2, "Nom", "Prenom", "Test"));
-    // this.consultants.push(new Consultant(2, "Nom", "Prenom", "Test"));
-    console.log("Consultants",this.consultants);
+    console.log("Consultants : ",this.consultants);
     return this.consultants;
   }
 

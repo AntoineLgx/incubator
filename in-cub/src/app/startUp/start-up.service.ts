@@ -17,9 +17,7 @@ export class StartUpService {
     this.http.get<StartUp[]>('http://localhost:3000/startups').subscribe(
       startUps => startUps.map(startUp => this.startUps.push(startUp))
     );
-    //  this.startUps.push(new StartUp(1, "Test", "Test", "Test", 1, "Test", "Mail", null));
-    //  this.startUps.push(new StartUp(1, "Test", "Test", "Test", 2, "Test", null, null));
-    //  this.startUps.push(new StartUp(1, "Test", "Test", "Test", 2, "Test", null, null));
+    console.log("Start-ups : ",this.startUps);
     return this.startUps;
   }
 
