@@ -4,6 +4,7 @@ import { StartUp } from '../startUp/StartUp';
 import { StartUpService } from '../startUp/start-up.service';
 import { ConsultantService } from '../consultant/consultant.service';
 import { Consultant } from '../consultant/Consultant';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-start-up-form',
@@ -22,7 +23,7 @@ export class StartUpFormComponent implements OnInit {
 	emailControl: FormControl;
 	consultantControl: FormControl;
 
-	constructor(private startUpService: StartUpService, private consultantService: ConsultantService, private fb: FormBuilder) { 
+	constructor(private startUpService: StartUpService, private consultantService: ConsultantService, private fb: FormBuilder, private router: Router) { 
 		this.nomControl = this.fb.control('', [Validators.required, Validators.maxLength(20)]);
 		this.secteurControl = this.fb.control('', [Validators.required, Validators.maxLength(10)]);
 		this.nomRepLegControl = this.fb.control('', [Validators.required, Validators.maxLength(15)]);
@@ -56,8 +57,8 @@ export class StartUpFormComponent implements OnInit {
 			mail: this.startUpForm.value.mail,
 			consultant: this.startUpForm.value.consultant != null ? this.startUpForm.value.consultant.id : null
 		};
-		console.log(startUp);
 		this.startUpService.addStartUp(startUp);
 		this.startUpForm.reset();
+		this.router.navigate(['/startups']);
 	}
 }
